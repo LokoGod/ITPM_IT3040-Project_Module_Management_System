@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
-
 import { Providers } from "./chakraUi/providers";
 
 import "./styles/globals.css";
@@ -14,8 +13,8 @@ import MarginWidthWrapper from "@/components/layout/wrappers/Margin-Width-Wrappe
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Admin Panel",
-  description: "Created by pearl-wave",
+  title: "Project Module Management System",
+  description: "Created @ SLIIT",
 };
 
 
