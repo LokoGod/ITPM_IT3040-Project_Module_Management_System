@@ -9,7 +9,7 @@ import { usePathname } from "next/navigation";
 import { SIDENAV_ITEMS } from "./constants";
 import { SideNavItem } from "./types";
 
-import { Input } from "@/components/ui/input";
+import { Input } from '@chakra-ui/react'
 
 import { Icon } from "@iconify/react";
 import { IoSearch } from "react-icons/io5";
@@ -36,8 +36,9 @@ const SideNav = () => {
 
         <div className="flex flex-col space-y-2  md:px-6">
           <div className="relative">
-            <IoSearch className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
+            {/* <IoSearch className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" /> */}
             <Input placeholder="Search" className="pl-8" />
+            
           </div>
         </div>
 

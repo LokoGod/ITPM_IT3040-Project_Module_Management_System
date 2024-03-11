@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Analytics } from '@vercel/analytics/react';
 
 import { Providers } from "./chakraUi/providers";
 
@@ -38,8 +36,6 @@ export default function RootLayout({
                 <HeaderMobile />
                 <PageWrapper>      
                   {children}           
-                  <SpeedInsights />
-                  <Analytics />
                 </PageWrapper>
               </MarginWidthWrapper>
             </main>
