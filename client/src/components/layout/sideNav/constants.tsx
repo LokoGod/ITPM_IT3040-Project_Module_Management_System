@@ -11,7 +11,7 @@ export const SIDENAV_ITEMS: SideNavItem[] = [
     icon: <Icon icon="lucide:home" width="16" height="16" />,
   },
   {
-    title: 'Module Management',
+    title: 'Modules',
     path: '/projectManagement/',
     icon: <LuUser width="16" height="16" className="text-amber-500" />,
     submenu: true,
@@ -28,7 +28,7 @@ export const SIDENAV_ITEMS: SideNavItem[] = [
     icon: <Icon icon="lucide:mail" width="16" height="16" />,
   },
   {
-    title: 'Marking Management',
+    title: 'Marking',
     path: '/markingManagement/',
     icon: <GrMoney width="16" height="16" className="text-lime-500" />,
     submenu: true,
