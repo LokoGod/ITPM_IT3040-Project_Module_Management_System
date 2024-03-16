@@ -1,6 +1,7 @@
 import { Icon } from '@iconify/react';
 import { LuUser } from "react-icons/lu";
 import { GrMoney } from "react-icons/gr";
+import { IoIosCheckmarkCircleOutline } from "react-icons/io";
 
 import { SideNavItem } from './types';
 
@@ -11,7 +12,7 @@ export const SIDENAV_ITEMS: SideNavItem[] = [
     icon: <Icon icon="lucide:home" width="16" height="16" />,
   },
   {
-    title: 'Modules',
+    title: 'Pro Management',
     path: '/projectManagement/',
     icon: <LuUser width="16" height="16" className="text-amber-500" />,
     submenu: true,
@@ -23,22 +24,27 @@ export const SIDENAV_ITEMS: SideNavItem[] = [
     ],
   },
   {
-    title: 'Messages',
+    title: 'User Management',
     path: '/messages',
     icon: <Icon icon="lucide:mail" width="16" height="16" />,
   },
   {
     title: 'Marking',
-    path: '/markingManagement/',
-    icon: <GrMoney width="16" height="16" className="text-lime-500" />,
+    path: '/marking/',
+    icon: <IoIosCheckmarkCircleOutline width="16" height="16" />,
     submenu: true,
     subMenuItems: [
-      { title: 'Overview', path: '/finance/overview' },
-      { title: 'Record finances', path: '/finance/recordFinances' },
+      { title: 'Mark Sheet', path: '/marking/overview' },
+      { title: 'Record finances', path: '/marking/recordFinances' },
     ],
   },
   {
-    title: 'Settings',
+    title: 'Research Publiction',
+    path: '/messages',
+    icon: <Icon icon="lucide:mail" width="16" height="16" />,
+  },
+  {
+    title: 'Presentation Man',
     path: '/settings',
     icon: <Icon icon="lucide:settings" width="16" height="16" />,
     submenu: true,

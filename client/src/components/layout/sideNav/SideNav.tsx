@@ -31,7 +31,7 @@ const SideNav = () => {
             height={28}
             alt="Picture of the author"
           />
-          <span className="font-bold text-xl hidden md:flex">Pearl Wave</span>
+          <span className="font-bold text-xl hidden md:flex">Manage Pro</span>
         </Link>
 
         <div className="flex flex-col space-y-2  md:px-6">
