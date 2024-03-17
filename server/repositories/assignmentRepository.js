@@ -2,15 +2,20 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 const getAllAssignments = async () => {
-  try {
-    return prisma.assignment.findMany();
-  } catch (error) {
-    console.error(error);
-  }
+  return await prisma.assignment.findMany();
 };
 
-const createAssignment = () => {
-  try {
-    return;
-  } catch (error) {}
+const createAssignment = async (assignment_title, assignment_details) => {
+  return await prisma.assignment.create({
+    data: {
+      assignment_title,
+      assignment_details,
+    },
+  });
 };
+
+const assignmentRepository = {
+  getAllAssignments,
+  createAssignment,
+};
+export default assignmentRepository;
