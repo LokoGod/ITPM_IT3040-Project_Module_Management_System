@@ -13,11 +13,16 @@ datasource db {
   url       = env("DATABASE_URL")
   directUrl = env("DIRECT_URL")
 }
-        
 
 model User {
   id    Int     @id @default(autoincrement())
   email String  @unique
   name  String?
   role  String
+}
+
+model assignment {
+  id                 Int    @id @default(autoincrement())
+  assignment_title   String
+  assignment_details String
 }
