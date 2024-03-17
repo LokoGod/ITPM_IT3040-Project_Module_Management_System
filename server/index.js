@@ -14,7 +14,8 @@ app.use(cors());
 dotenv.config();
 
 // API Endpoints
-app.use("api/v1/")
+
+// app.use("api/v1/")
 
 const port = process.env.PORT || 9000;
 
