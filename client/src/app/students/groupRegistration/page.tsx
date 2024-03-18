@@ -1,3 +1,4 @@
+import GroupRegistrationForm from "@/components/forms/GroupRegistrationForm";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -10,7 +11,7 @@ import { FaAngleRight, FaHouse } from "react-icons/fa6";
 export default function GroupRegistration() {
   return (
     <>
-      <div className="text-xs m-2">
+      <div className="text-xs my-2">
         <Breadcrumb spacing="8px" separator={<FaAngleRight color="gray.500" />}>
           <BreadcrumbItem>
             <BreadcrumbLink href="/">
@@ -20,11 +21,16 @@ export default function GroupRegistration() {
           <BreadcrumbItem>
             <BreadcrumbLink href="/students/">For Students</BreadcrumbLink>
           </BreadcrumbItem>
-          <BreadcrumbItem>
-            <BreadcrumbLink href="">Group Registration</BreadcrumbLink>
-          </BreadcrumbItem>
         </Breadcrumb>
       </div>
+
+      <div>
+        <h2 className="text-3xl font-bold tracking-tight mb-2">
+          Group Registrationsss
+        </h2>
+      </div>
+
+      
     </>
   );
 }
