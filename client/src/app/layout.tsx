@@ -1,45 +1,47 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-
-import { Providers } from "./chakraUi/providers";
-
-import "./styles/globals.css";
-import Header from "@/components/layout/header/Header";
-import HeaderMobile from "@/components/layout/header/HeaderMobile";
-import SideNav from "@/components/layout/sideNav/SideNav";
-import PageWrapper from "@/components/layout/wrappers/Page-Wrapper";
-import MarginWidthWrapper from "@/components/layout/wrappers/Margin-Width-Wrapper";
+// import { GeistSans } from 'geist/font/sans';
+// import { GeistMono } from 'geist/font/mono';
+import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
+import Navbar from "@/components/NavBar";
+import Footer from "@/components/Footer";
+import { Toaster, toast } from "sonner";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Project Module Management System",
-  description: "Created @ SLIIT",
+  title: "Job Application",
+  description: "CeylonTek Internal Systems",
 };
-
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <Providers>
-          <div className="flex">
-            <SideNav />
-            <main className="flex-1">
-              <MarginWidthWrapper>
-                <Header />
-                <HeaderMobile />
-                <PageWrapper>      
-                  {children}           
-                </PageWrapper>
-              </MarginWidthWrapper>
-            </main>
-          </div>
-        </Providers>
+        <TooltipProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <Toaster richColors />
+            <Navbar />
+            {children}
+            <Footer />
+          </ThemeProvider>
+        </TooltipProvider>
       </body>
     </html>
   );
