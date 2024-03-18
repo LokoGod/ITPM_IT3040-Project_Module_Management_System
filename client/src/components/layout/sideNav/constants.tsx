@@ -24,6 +24,15 @@ export const SIDENAV_ITEMS: SideNavItem[] = [
     ],
   },
   {
+    title: 'For Students',
+    path: '/students',
+    icon: <LuUser width="16" height="16" className="text-blue-500" />,
+    submenu: true,
+    subMenuItems: [
+      { title: 'Group Registration', path: '/students/groupRegistration' },
+    ],
+  },
+  {
     title: 'User Management',
     path: '/messages',
     icon: <Icon icon="lucide:mail" width="16" height="16" />,
