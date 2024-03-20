@@ -9,7 +9,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-import { jobColumn, JobColumnType } from "@/components/tables/jobColumn";
 import HomeTable from "@/components/visualizations/HomeTable";
 import HomeBarChart from "@/components/visualizations/HomeBarChart";
 import { Button } from "@/components/ui/button";
@@ -23,7 +22,24 @@ import {
 import { IoMdAddCircleOutline } from "react-icons/io";
 import { toast } from "sonner";
 
+import { groupColumn, GroupColumnType } from "@/components/tables/students/groups/groupsColumn";
+import { DataTable } from "@/components/tables/students/groups/groupsTableData";
+
 export default function GroupRegistration() {
+
+    async function getJobData(): Promise<GroupColumnType[]> {
+        const response = await fetch("https://job-app-q299.onrender.com/api/v1/job", {
+          cache: "no-store",
+        });
+      
+        if (!response.ok) {
+          toast.error("Failed to fetch data");
+        }
+        return response.json();
+      }
+
+      const jobData = getJobData()
+
   return (
     <>
       <main>
@@ -35,7 +51,9 @@ export default function GroupRegistration() {
             </TabsList>
           </Card>
 
-          <TabsContent value="groups"></TabsContent>
+          <TabsContent value="groups">
+          <DataTable columns={groupColumn} data={jobData} />
+          </TabsContent>
 
           <TabsContent value="register"></TabsContent>
         </Tabs>
