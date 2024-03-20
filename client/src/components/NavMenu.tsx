@@ -53,6 +53,21 @@ const components: { title: string; href: string; description: string }[] = [
   },
 ]
 
+const students: { title: string; href: string; description: string }[] = [
+  {
+    title: "Group Registration",
+    href: "/students/groupRegistration",
+    description:
+      "This section is to make students register for project groups.",
+  },
+  {
+    title: "Hover Card",
+    href: "/docs/primitives/hover-card",
+    description:
+      "For sighted users to preview content available behind a link.",
+  },
+]
+
 export function NavMenu() {
   return (
     <NavigationMenu>
@@ -113,6 +128,23 @@ export function NavMenu() {
               Documentation
             </NavigationMenuLink>
           </Link>
+        </NavigationMenuItem>
+
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>Students</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+              {students.map((student) => (
+                <ListItem
+                  key={student.title}
+                  title={student.title}
+                  href={student.href}
+                >
+                  {student.description}
+                </ListItem>
+              ))}
+            </ul>
+          </NavigationMenuContent>
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>

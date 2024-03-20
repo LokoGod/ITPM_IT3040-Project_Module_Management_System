@@ -6,7 +6,7 @@ import { FaConnectdevelop, FaArrowRightFromBracket } from "react-icons/fa6";
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   const copyrightDate = 2024;
-  const copyrightName = "CeylonTek" || "CeylonTek" || "";
+  const copyrightName = "PVT Institute" || "PVT Institute" || "";
 
   return (
     <>
@@ -21,13 +21,13 @@ export default function Footer() {
               All rights reserved.
             </p>
             <hr className="mx-4 hidden h-4 w-[1px] border-l border-neutral-400 md:inline-block" />
-            <p>Designed in Colombo</p>
+            <p>Designed in SLIIT</p>
             <p className="md:ml-auto">
               <a
                 href="https://www.instagram.com/pearlwave.labs/"
                 className="text-black dark:text-white"
               >
-                Crafted by ▲ PearlWave Labs
+                Crafted by ▲ 3YS1 Students
               </a>
             </p>
           </div>

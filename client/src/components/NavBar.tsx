@@ -45,7 +45,7 @@ export default function Navbar() {
               <RxDesktop size={25} />
               <div className="ml-4 flex-none text-sm font-bold uppercase md:hidden lg:block">
                 {/* {SITE_NAME} */}
-                Job-App
+                Pro-Manager
               </div>
             </Link>
           </div>
