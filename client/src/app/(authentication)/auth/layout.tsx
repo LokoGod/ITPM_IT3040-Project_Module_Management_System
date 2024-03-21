@@ -15,8 +15,8 @@ import {
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Job Application",
-  description: "CeylonTek Internal Systems",
+  title: "PVT Institute",
+  description: "Institute Internal Systems",
 };
 
 export default function RootLayout({
