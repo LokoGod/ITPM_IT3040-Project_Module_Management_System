@@ -28,22 +28,33 @@ import {
 } from "@/components/tables/students/groups/groupsColumn";
 import { DataTable } from "@/components/tables/students/groups/groupsTableData";
 
-export default function GroupRegistration() {
-  async function getJobData(): Promise<GroupColumnType[]> {
-    const response = await fetch(
-      "https://job-app-q299.onrender.com/api/v1/job",
-      {
-        cache: "no-store",
-      }
-    );
 
-    if (!response.ok) {
-      toast.error("Failed to fetch data");
-    }
-    return response.json();
+
+export default async function GroupRegistration() {
+  async function getGroupData(): Promise<GroupColumnType[]> {
+    return [
+      {
+        groupNum: "G-001",
+        members: "hasitha. pathum, vijitha",
+        noMem: 3,
+        description: "This is the description",
+      },
+      {
+        groupNum: "G-002",
+        members: "mayukha, adilu, visura, sidath",
+        noMem: 4,
+        description: "This is the description",
+      },
+      {
+        groupNum: "G-003",
+        members: "kavindu, danidu, munidu, sasika, roshan",
+        noMem: 5,
+        description: "This is the description",
+      },
+    ]
   }
 
-  const jobData = getJobData();
+  const data =  await getGroupData();
 
   return (
     <>
@@ -57,7 +68,7 @@ export default function GroupRegistration() {
           </Card>
 
           <TabsContent value="groups">
-            <DataTable columns={groupColumn} data={jobData} />
+            <DataTable columns={groupColumn} data={data} />
           </TabsContent>
 
           <TabsContent value="register"></TabsContent>

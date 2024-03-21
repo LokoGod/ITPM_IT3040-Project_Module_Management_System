@@ -42,6 +42,7 @@ import { Input } from "@/components/ui/table_input";
 import { IoChevronDownSharp } from "react-icons/io5";
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa6";
 
+
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
