@@ -27,6 +27,7 @@ import {
   GroupColumnType,
 } from "@/components/tables/students/groups/groupsColumn";
 import { DataTable } from "@/components/tables/students/groups/groupsTableData";
+import { GroupRegister } from "@/components/forms/students/GroupRegister";
 
 
 
@@ -71,7 +72,9 @@ export default async function GroupRegistration() {
             <DataTable columns={groupColumn} data={data} />
           </TabsContent>
 
-          <TabsContent value="register"></TabsContent>
+          <TabsContent value="register">
+            <GroupRegister />
+          </TabsContent>
         </Tabs>
       </main>
     </>
