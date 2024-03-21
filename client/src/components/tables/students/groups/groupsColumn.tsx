@@ -92,21 +92,21 @@ export const groupColumn: ColumnDef<GroupColumnType>[] = [
     accessorKey: "id",
     header: "",
     cell: ({ row }) => {
-      const jobId: string = row.getValue("id");
-      const jobStatus: string = row.getValue("status");
+      // const jobId: string = row.getValue("id");
+      // const jobStatus: string = row.getValue("status");
 
       // const router = useRouter()
 
-      const handleDeleteJob = async () => {
-        try {
-          await axios.delete(`https://job-app-q299.onrender.com/api/v1/job/${jobId}`);
-          toast.success("Job deleted successfully");
-          window.location.reload();
-        } catch (error) {
-          console.error("Error deleting job:", error);
-          toast.error("Error deleting job");
-        }
-      };
+      // const handleDeleteJob = async () => {
+      //   try {
+      //     await axios.delete(`https://job-app-q299.onrender.com/api/v1/job/${jobId}`);
+      //     toast.success("Job deleted successfully");
+      //     window.location.reload();
+      //   } catch (error) {
+      //     console.error("Error deleting job:", error);
+      //     toast.error("Error deleting job");
+      //   }
+      // };
 
       return (
         <DropdownMenu>
@@ -128,7 +128,7 @@ export const groupColumn: ColumnDef<GroupColumnType>[] = [
                 <DialogContent>
                   <DialogHeader>
                     <DialogTitle className="mb-5">Update Status</DialogTitle>
-                    <DialogDescription>Current Status: {jobStatus}</DialogDescription>
+                    {/* <DialogDescription>Current Status: {jobStatus}</DialogDescription> */}
                   </DialogHeader>
                 </DialogContent>
               </Dialog>
@@ -136,16 +136,19 @@ export const groupColumn: ColumnDef<GroupColumnType>[] = [
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
               <Link
-                href={`viewDetailedJob/${jobId}`}
+                // href={`viewDetailedJob/${jobId}`}
+                href={'asc/'}
               >
                 <DropdownMenuItem>
                   <FaRegEye className="mr-5" />
-                  View job
+                  View 
                 </DropdownMenuItem>
               </Link>
-              <DropdownMenuItem onClick={handleDeleteJob}>
+              <DropdownMenuItem 
+              // onClick={handleDeleteJob}
+              >
                 <FaRegTrashAlt className="mr-5" />
-                Delete job
+                Delete 
               </DropdownMenuItem>
             </DropdownMenuGroup>
           </DropdownMenuContent>
