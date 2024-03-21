@@ -36,7 +36,7 @@ export default async function GroupRegistration() {
     return [
       {
         groupNum: "G-001",
-        members: "hasitha. pathum, vijitha",
+        members: "hasitha, pathum, vijitha",
         noMem: 3,
         description: "This is the description",
       },
