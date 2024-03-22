@@ -54,6 +54,15 @@ import {
 } from "@/components/ui/popover";
 import { useState } from "react";
 
+const MAX_FILE_SIZE = 10000000;
+function checkFileType(file: File) {
+  if (file?.name) {
+    const fileType = file.name.split(".").pop();
+    if (fileType === "png" || fileType === "jpg") return true;
+  }
+  return false;
+}
+
 const formSchema = z.object({
   projectGroupNum: z.string().min(2, {
     message: "Error must be at least 2 characters.",
@@ -83,10 +92,8 @@ const formSchema = z.object({
     message: "Phone-num must have 10 numericals.",
   }),
   photoOfAcceptanceLetter: z
-    .string()
-    .min(10, {
-      message: "Phone-num must have 10 numericals.",
-    })
+    .any()
+    .refine((file) => checkFileType(file), "Only .jpg, .png formats are supported.")
     .optional(),
   photoOfReviewSheet: z
     .string()
@@ -123,18 +130,18 @@ export function ResearchPaperPublicationForm() {
 
   // 2. Define a submit handler.
   async function onSubmit(values: z.infer<typeof formSchema>, event: any) {
-    event.preventDefault();
+    // event.preventDefault();
 
-    try {
-      const response = await axios.post(
-        "https://job-app-q299.onrender.com/api/v1/job",
-        values
-      );
-      toast.success("Job record saved successfully!");
-      router.push("/");
-    } catch (error) {
-      toast.error("Cannot create a job at the moment");
-    }
+    // try {
+    //   const response = await axios.post(
+    //     "https://job-app-q299.onrender.com/api/v1/job",
+    //     values
+    //   );
+    //   toast.success("Job record saved successfully!");
+    //   router.push("/");
+    // } catch (error) {
+    //   toast.error("Cannot create a job at the moment");
+    // }
   }
 
   return (
