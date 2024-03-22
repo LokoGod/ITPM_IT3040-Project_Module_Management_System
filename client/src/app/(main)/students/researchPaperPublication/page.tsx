@@ -12,6 +12,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { ResearchPaperPublicationForm } from "@/components/forms/students/ResearchPaperPublicationForm";
 
 export default function ResearchPaperPublication() {
   return (
@@ -25,7 +26,9 @@ export default function ResearchPaperPublication() {
             </TabsList>
           </Card>
 
-          <TabsContent value="publication"></TabsContent>
+          <TabsContent value="publication">
+            <ResearchPaperPublicationForm />
+          </TabsContent>
 
           <TabsContent value="other"></TabsContent>
         </Tabs>
