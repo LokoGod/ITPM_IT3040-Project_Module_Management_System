@@ -61,10 +61,10 @@ const students: { title: string; href: string; description: string }[] = [
       "This section is to make students register for project groups.",
   },
   {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
+    title: "Research Paper Publication",
+    href: "/students/researchPaperPublication",
     description:
-      "For sighted users to preview content available behind a link.",
+      "The final research paper publication section.",
   },
 ]
 
