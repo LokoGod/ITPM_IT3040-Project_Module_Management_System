@@ -52,16 +52,18 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { BsPaperclip } from "react-icons/bs";
+import { BsImages } from "react-icons/bs";
 import { useState } from "react";
 
-const MAX_FILE_SIZE = 10000000;
-function checkFileType(file: File) {
-  if (file?.name) {
-    const fileType = file.name.split(".").pop();
-    if (fileType === "png" || fileType === "jpg") return true;
-  }
-  return false;
-}
+const MAX_FILE_SIZE = 1024 * 1024 * 5;
+const ACCEPTED_IMAGE_MIME_TYPES = [
+  "image/jpeg",
+  "image/jpg",
+  "image/png",
+  "image/webp",
+];
+const ACCEPTED_IMAGE_TYPES = ["jpeg", "jpg", "png", "webp"];
 
 const formSchema = z.object({
   projectGroupNum: z.string().min(2, {
@@ -93,7 +95,13 @@ const formSchema = z.object({
   }),
   photoOfAcceptanceLetter: z
     .any()
-    .refine((file) => checkFileType(file), "Only .jpg, .png formats are supported.")
+    .refine((files) => {
+      return files?.[0]?.size <= MAX_FILE_SIZE;
+    }, `Max image size is 5MB.`)
+    .refine(
+      (files) => ACCEPTED_IMAGE_MIME_TYPES.includes(files?.[0]?.type),
+      "Only .jpg, .jpeg, .png and .webp formats are supported."
+    )
     .optional(),
   photoOfReviewSheet: z
     .string()
@@ -120,11 +128,14 @@ export function ResearchPaperPublicationForm() {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState("");
 
+  // const [selectedImage, setSelectedImage] = (useState < File)  | ( null > [])
+
   // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       //   jobError: "",
+      photoOfAcceptanceLetter: undefined,
     },
   });
 
@@ -364,6 +375,21 @@ export function ResearchPaperPublicationForm() {
 
               <div className="grid grid-cols-4 gap-4">
                 <div className="">
+                {/* {selectedImage ? (
+                  <div className="md:max-w-[200px]">
+                    <img
+                      src={URL.createObjectURL(selectedImage)}
+                      alt="Selected"
+                    />
+                  </div>
+                ) : (
+                  <div className="inline-flex items-center justify-between">
+                    <div className="p-3 bg-slate-200  justify-center items-center flex">
+                      <BsImages size={56} />
+                    </div>
+                    
+                  </div>
+                )} */}
                   <FormField
                     control={form.control}
                     name="photoOfAcceptanceLetter"
@@ -371,7 +397,18 @@ export function ResearchPaperPublicationForm() {
                       <FormItem>
                         <FormLabel>photoOfAcceptanceLetter</FormLabel>
                         <FormControl>
-                          <Input id="picture" type="file" {...field} />
+                       
+                        <Input
+                          type="file"
+                          id="fileInput"
+                          onChange={(e) => {
+                            field.onChange(e.target.files);
+                            // setSelectedImage(e.target.files?.[0] || null);
+                          }}
+                          ref={field.ref}
+                        />
+                     
+                       
                         </FormControl>
                         <FormDescription>
                           photoOfAcceptanceLetter
