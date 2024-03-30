@@ -22,6 +22,12 @@ const adminStaff: { title: string; href: string; description: string }[] = [
     description:
       "Register staff & students into the system.",
   },
+  {
+    title: "User Registration",
+    href: "/adminStaff/userRegistration",
+    description:
+      "Register staff & students into the system.",
+  },
 ]
 
 const students: { title: string; href: string; description: string }[] = [
