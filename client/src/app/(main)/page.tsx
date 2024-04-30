@@ -57,7 +57,7 @@ export default async function Home() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <HomeTable />
+                {/*<HomeTable />*/}
               </CardContent>
             </Card>
           </div>
