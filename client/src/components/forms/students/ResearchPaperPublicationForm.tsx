@@ -161,7 +161,7 @@ export function ResearchPaperPublicationForm() {
         <CardHeader>
           <CardTitle>Publication Form</CardTitle>
           <CardDescription>
-            Enter the detailes of your research paper
+            Enter the details of your research paper
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -174,11 +174,11 @@ export function ResearchPaperPublicationForm() {
                     name="projectGroupNum"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>projectGroupNum</FormLabel>
+                        <FormLabel>Project Group Number</FormLabel>
                         <FormControl>
                           <Input {...field} />
                         </FormControl>
-                        <FormDescription>projectGroupNum</FormDescription>
+                        <FormDescription>Enter your assigned group number</FormDescription>
                         <FormMessage />
                       </FormItem>
                     )}
