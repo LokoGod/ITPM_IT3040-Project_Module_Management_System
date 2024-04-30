@@ -23,20 +23,20 @@ import {
 import { IoMdAddCircleOutline } from "react-icons/io";
 import { toast } from "sonner";
 
-async function getJobData(): Promise<JobColumnType[]> {
-  const response = await fetch("https://job-app-q299.onrender.com/api/v1/job", {
-    cache: "no-store",
-  });
-
-  if (!response.ok) {
-    toast.error("Failed to fetch data");
-  }
-  return response.json();
-}
+//async function getJobData(): Promise<JobColumnType[]> {
+//  const response = await fetch("https://job-app-q299.onrender.com/api/v1/job", {
+//    cache: "no-store",
+//  });
+//
+//  if (!response.ok) {
+//    toast.error("Failed to fetch data");
+//  }
+//  return response.json();
+//}
 
 export default async function Home() {
-  const jobData = (await getJobData()).reverse();
-  const numberOfJob = jobData.length;
+//  const jobData = (await getJobData()).reverse();
+//  const numberOfJob = jobData.length;
 
   return (
     <main>
@@ -49,7 +49,7 @@ export default async function Home() {
         </Card>
 
         <TabsContent value="dash">
-          <HomeCardData />
+          {/*<HomeCardData />*/}
 
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7 mx-10 mb-5">
             <Card className="col-span-4">
@@ -64,11 +64,11 @@ export default async function Home() {
               <CardHeader>
                 <CardTitle>Recent Jobs</CardTitle>
                 <CardDescription>
-                  You made {numberOfJob} jobs this month.
+                  You made jobs this month.
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <HomeTable />
+                {/*<HomeTable />*/}
               </CardContent>
             </Card>
           </div>
@@ -92,7 +92,7 @@ export default async function Home() {
             </Tooltip>
           </div>
 
-          <DataTable columns={jobColumn} data={jobData} />
+          {/*<DataTable columns={jobColumn} data={jobData} />*/}
         </TabsContent>
       </Tabs>
     </main>
