@@ -190,11 +190,11 @@ export function ResearchPaperPublicationForm() {
                     name="researchTitle"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>researchTitle</FormLabel>
+                        <FormLabel>Title Of Research</FormLabel>
                         <FormControl>
                           <Input {...field} />
                         </FormControl>
-                        <FormDescription>researchTitle</FormDescription>
+                        <FormDescription>Enter the title of the research paper</FormDescription>
                         <FormMessage />
                       </FormItem>
                     )}
