@@ -16,7 +16,7 @@ app.use(cors());
 dotenv.config();
 
 // API Endpoints
-app.use("/api/v1/adminStaffAuth", adminStaffRoutes)
+app.use("/api/v1/adminStaff", adminStaffRoutes)
 app.use("/api/v1/assignment", assignmentRoutes);
 
 const port = process.env.PORT || 9000;

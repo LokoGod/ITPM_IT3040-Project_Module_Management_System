@@ -4,7 +4,7 @@ import bcrypt from "bcrypt";
 const prisma = new PrismaClient();
 
 const getAllAdminStaffDetails = async () => {
-  return await prisma.admin.findMany();
+  return await prisma.adminStaff.findMany();
 };
 
 const createAdminStaff = async (email, password, role) => {
@@ -15,7 +15,7 @@ const createAdminStaff = async (email, password, role) => {
   const salt = await bcrypt.genSalt(10);
   const hash = await bcrypt.hash(password, salt);
 
-  return await prisma.admin.create({
+  return await prisma.adminStaff.create({
     data: {
       email,
       password: hash,
@@ -26,6 +26,6 @@ const createAdminStaff = async (email, password, role) => {
 
 const adminStaffRepository = {
   getAllAdminStaffDetails,
-  createAdmin,
+  createAdminStaff,
 };
 export default adminStaffRepository;

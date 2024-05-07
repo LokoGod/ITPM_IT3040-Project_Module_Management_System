@@ -7,6 +7,6 @@ import {
 } from "../controllers/adminStaffController.js";
 
 adminStaffRoutes.route("/").get(getAllAdminStaffDetails);
-adminStaffRoutes.route("/adminStaffCreate").post(createAdminStaff);
+adminStaffRoutes.route("/").post(createAdminStaff);
 
 export { adminStaffRoutes };
