@@ -17,14 +17,14 @@ import { FaRegMoon } from "react-icons/fa";
 
 const adminStaff: { title: string; href: string; description: string }[] = [
   {
-    title: "User Registration",
-    href: "/adminStaff/userRegistration",
+    title: "Admin Staff",
+    href: "/adminStaff",
     description:
       "Register staff & students into the system.",
   },
   {
-    title: "User Registration",
-    href: "/adminStaff/userRegistration",
+    title: "Admin Staff Registration",
+    href: "/adminStaff/adminStaffRegistration",
     description:
       "Register staff & students into the system.",
   },
