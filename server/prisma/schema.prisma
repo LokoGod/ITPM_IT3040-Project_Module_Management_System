@@ -13,10 +13,11 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Admin {
+model AdminStaff {
   id       Int    @id @default(autoincrement())
-  username String @unique
+  email    String @unique
   password String @unique
+  role     String
 }
 
 model User {
