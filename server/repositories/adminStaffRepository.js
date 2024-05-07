@@ -7,9 +7,9 @@ const getAllAdminStaffDetails = async () => {
   return await prisma.admin.findMany();
 };
 
-const createAdmin = async (username, password) => {
-  if (!username || !password) {
-    console.log("Username & Password Mandatory");
+const createAdminStaff = async (email, password, role) => {
+  if (!email || !password) {
+    console.log("email & Password Mandatory");
   }
 
   const salt = await bcrypt.genSalt(10);
@@ -17,14 +17,15 @@ const createAdmin = async (username, password) => {
 
   return await prisma.admin.create({
     data: {
-      username,
+      email,
       password: hash,
+      role
     },
   });
 };
 
-const adminRepository = {
+const adminStaffRepository = {
   getAllAdminStaffDetails,
   createAdmin,
 };
-export default adminRepository;
+export default adminStaffRepository;
