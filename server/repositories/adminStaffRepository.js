@@ -1,9 +1,9 @@
 import { PrismaClient } from "@prisma/client";
-const prisma = new PrismaClient();
-
 import bcrypt from "bcrypt";
 
-const getAllAdminDetails = async () => {
+const prisma = new PrismaClient();
+
+const getAllAdminStaffDetails = async () => {
   return await prisma.admin.findMany();
 };
 
@@ -24,7 +24,7 @@ const createAdmin = async (username, password) => {
 };
 
 const adminRepository = {
-  getAllAdminDetails,
+  getAllAdminStaffDetails,
   createAdmin,
 };
 export default adminRepository;
