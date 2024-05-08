@@ -5,6 +5,7 @@ import cors from "cors";
 
 // Custom Routing
 import { assignmentRoutes } from "./routes/assignmentRouter.js";
+import { adminStaffRoutes } from "./routes/adminStaffRouter.js";
 
 // Instances
 const app = express();
@@ -15,7 +16,7 @@ app.use(cors());
 dotenv.config();
 
 // API Endpoints
-
+app.use("/api/v1/adminStaff", adminStaffRoutes)
 app.use("/api/v1/assignment", assignmentRoutes);
 
 const port = process.env.PORT || 9000;

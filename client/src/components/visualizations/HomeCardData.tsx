@@ -17,19 +17,19 @@ import { TbUsers } from "react-icons/tb";
 import { LuDollarSign } from "react-icons/lu";
 import { toast } from "sonner";
 
-async function getJobData() {
-  const response = await fetch("https://job-app-q299.onrender.com/api/v1/job", {
-    next: { revalidate: 300 },
-  });
-
-  if (!response.ok) {
-    toast.error("Failed to fetch data");
-  }
-  return response.json();
-}
+//async function getJobData() {
+//  const response = await fetch("https://job-app-q299.onrender.com/api/v1/job", {
+//    next: { revalidate: 300 },
+//  });
+//
+//  if (!response.ok) {
+//    toast.error("Failed to fetch data");
+//  }
+//  return response.json();
+//}
 
 const HomeCardData = async () => {
-  const jobData = await getJobData();
+//  const jobData = await getJobData();
   
   return (
     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4 my-5 mx-10">
