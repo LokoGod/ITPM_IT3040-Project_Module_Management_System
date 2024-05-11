@@ -4,7 +4,6 @@ import bodyParser from "body-parser";
 import cors from "cors";
 
 // Custom Routing
-import { assignmentRoutes } from "./routes/assignmentRouter.js";
 import { adminStaffRoutes } from "./routes/adminStaffRouter.js";
 
 // Instances
@@ -17,7 +16,6 @@ dotenv.config();
 
 // API Endpoints
 app.use("/api/v1/adminStaff", adminStaffRoutes)
-app.use("/api/v1/assignment", assignmentRoutes);
 
 const port = process.env.PORT || 9000;
 
