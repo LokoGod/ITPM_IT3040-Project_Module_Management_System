@@ -25,8 +25,8 @@ import { toast } from "sonner";
 
 
 
-export default async function Home() {
 
+export default async function Home() {
   return (
     <main>
       <Tabs defaultValue="dash">
@@ -38,7 +38,7 @@ export default async function Home() {
         </Card>
 
         <TabsContent value="dash">
-          <HomeCardData />
+          {/*<HomeCardData />*/}
 
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7 mx-10 mb-5">
             <Card className="col-span-4">
@@ -54,6 +54,9 @@ export default async function Home() {
                 <CardTitle>Recent Jobs</CardTitle>
                 <CardDescription>
              
+
+                  You made jobs this month.
+
                 </CardDescription>
               </CardHeader>
               <CardContent>
