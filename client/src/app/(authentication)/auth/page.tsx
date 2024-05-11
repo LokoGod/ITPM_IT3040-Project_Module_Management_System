@@ -65,7 +65,7 @@ export default function AuthenticationPage() {
                 Log-in to your account
               </h1>
               <p className="text-sm text-muted-foreground">
-                Enter your email below to create your account
+                Enter your credentials below to enter the system
               </p>
             </div>
             <UserAuthForm />
